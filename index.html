@@ -1,210 +1,64 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PENZ — Simply Smart.</title>
-  <meta name="description" content="PENZ, küçük işletmeler için tasarlanmış sade ve akıllı cari, iş ve nakit takip uygulamasıdır." />
-  <link rel="icon" href="assets/penz-icon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Penz — İşletmeniz için yönetim paneli</title>
+<meta name="description" content="Müşterilerinizi, işlerinizi, tahsilatlarınızı, ödemelerinizi ve nakit akışınızı tek panelden yönetin.">
+<link rel="icon" href="assets/penz-icon.svg">
+<style>
+@font-face{font-family:Poppins;src:local('Poppins');font-display:swap}
+:root{--ink:#10182c;--muted:#64708a;--purple:#6f55db;--purple2:#7961e5;--orange:#ff9d42;--line:#e7e8ef;--soft:#f7f7fb}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Poppins,Arial,sans-serif;color:var(--ink);background:white}.container{width:min(1550px,calc(100% - 64px));margin:auto}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:5}.logo{width:132px;height:auto}.navlinks{display:flex;align-items:center;gap:42px;font-size:18px;font-weight:600}.navlinks a{color:#211c31;text-decoration:none}.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:18px 34px;text-decoration:none;font-weight:700;border:1px solid transparent;transition:.2s}.btn-orange{background:var(--orange);color:#fff;box-shadow:0 18px 32px rgba(255,157,66,.23)}.btn-outline{border-color:#dcdde8;color:#211c31;background:white}.btn-dark{background:#10182c;color:white}.nav-cta{padding:16px 34px}
+.hero{position:relative;overflow:hidden;min-height:790px;background:linear-gradient(105deg,#f8f7fd 0%,#fff 44%,#f5f3ff 100%)}.hero:before,.hero:after{content:"";position:absolute;border:3px solid rgba(111,85,219,.09);border-radius:50%;width:700px;height:700px}.hero:before{left:-420px;top:-60px}.hero:after{right:70px;top:-500px}.hero-grid{display:grid;grid-template-columns:44% 56%;align-items:center;min-height:700px;position:relative;z-index:2}.eyebrow{color:var(--purple);font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px}.hero h1{font-size:66px;line-height:1.08;letter-spacing:-.045em;margin:0 0 30px;max-width:700px}.hero h1 span{color:var(--purple2)}.lead{font-size:21px;line-height:1.7;max-width:650px;margin:0 0 36px}.actions{display:flex;gap:16px}.visual{position:relative;height:610px}.purple-blob{position:absolute;width:560px;height:560px;border-radius:50%;background:#57508f;left:40px;top:30px}.dashboard-frame{position:absolute;left:28px;top:42px;width:820px;background:transparent;border-radius:0;box-shadow:none;overflow:visible}.dashboard-frame img{display:block;width:100%;height:auto;object-fit:contain}.tag{position:absolute;background:white;padding:14px 24px;border-radius:999px;font-weight:600;box-shadow:0 15px 30px rgba(24,20,60,.12)}.tag.one{left:65px;top:205px}.tag.two{right:-20px;bottom:105px}.shape{position:absolute;border:4px solid rgba(255,255,255,.55);border-radius:50%;width:130px;height:130px;left:120px;top:5px}.section{padding:100px 0}.section.alt{background:#f8f9fc}.section-head{text-align:center;max-width:820px;margin:0 auto 55px}.kicker{color:var(--purple);text-transform:uppercase;letter-spacing:.12em;font-weight:700}.section h2{font-size:46px;line-height:1.18;letter-spacing:-.035em;margin:12px 0 18px}.section p{color:var(--muted);font-size:18px;line-height:1.7}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 10px 30px rgba(16,24,44,.04)}.icon{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;background:#f0edff;color:var(--purple);font-size:24px;font-weight:700}.card h3{font-size:22px;margin:20px 0 10px}.audience{display:flex;justify-content:center;flex-wrap:wrap;gap:13px;margin-top:35px}.pill{border:1px solid #dfe2eb;padding:12px 20px;border-radius:999px;color:#536079;background:#fff}.screens-wrap{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:start}.screen-tabs{display:flex;flex-direction:column;gap:10px}.screen-tabs button{border:0;background:#fff;text-align:left;padding:15px 18px;border-radius:12px;font:inherit;font-weight:600;color:#59647c;cursor:pointer}.screen-tabs button.active{background:#10182c;color:#fff}.screen-view{background:#fff;border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 25px 55px rgba(16,24,44,.12)}.screen-view img{width:100%;display:block;border-radius:10px}.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.why-list{display:grid;grid-template-columns:1fr 1fr;gap:18px}.why-item{padding:22px;border:1px solid var(--line);border-radius:15px;background:#fff;font-weight:600}.pricing-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;max-width:960px;margin:0 auto}.price-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:24px;padding:38px;box-shadow:0 18px 42px rgba(16,24,44,.06)}.price-card.featured{border:2px solid var(--purple);box-shadow:0 24px 55px rgba(111,85,219,.16)}.price-badge{position:absolute;right:24px;top:22px;background:#f0edff;color:var(--purple);font-size:14px;font-weight:700;padding:8px 13px;border-radius:999px}.price-type{font-size:22px;font-weight:700;margin-bottom:18px}.price{font-size:58px;line-height:1;font-weight:700;letter-spacing:-.045em}.price span{font-size:30px;vertical-align:top;margin-right:3px}.price small{font-size:17px;color:var(--muted);font-weight:500;letter-spacing:0;margin-left:8px}.saving{display:inline-block;margin-top:15px;background:#fff4e9;color:#c56612;border-radius:999px;padding:8px 13px;font-weight:700}.price-card ul{list-style:none;padding:0;margin:30px 0;display:grid;gap:14px;color:#536079;font-size:17px}.price-btn{width:100%}.price-note{text-align:center;margin:32px auto 0!important;font-size:15px!important;color:#67728a!important}.price-note strong{color:#303b54}
+.cta{background:#10182c;color:white;border-radius:30px;padding:60px;text-align:center}.cta h2{font-size:48px;margin-top:0}.footer{padding:38px 0}.footer-row{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:30px}.footer small{color:#788297}
+@media(max-width:1100px){.hero-grid{grid-template-columns:1fr}.hero{padding-bottom:40px}.visual{height:560px}.dashboard-frame{left:8%;width:84%;top:18px}.purple-blob{left:14%;width:450px;height:450px}.hero h1{font-size:56px}.feature-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:760px){.container{width:min(100% - 30px,1550px)}.navlinks a:not(.nav-cta){display:none}.logo{width:112px}.hero-grid{padding-top:40px}.hero h1{font-size:43px}.lead{font-size:18px}.actions{flex-direction:column;align-items:flex-start}.visual{height:360px}.dashboard-frame{left:2%;width:96%;top:14px}.purple-blob{left:10%;width:300px;height:300px}.tag{display:none}.section{padding:70px 0}.section h2{font-size:36px}.feature-grid,.why-list,.pricing-grid{grid-template-columns:1fr}.screens-wrap,.why-grid{grid-template-columns:1fr}.screen-tabs{flex-direction:row;overflow:auto}.screen-tabs button{white-space:nowrap}.cta{padding:42px 24px}.cta h2{font-size:36px}.footer-row{gap:20px;align-items:flex-start;flex-direction:column}}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="PENZ ana sayfa">
-      <img src="assets/penz-logo.svg" alt="PENZ" />
-    </a>
-    <nav class="nav" aria-label="Ana menü">
-      <a href="#features">Özellikler</a>
-      <a href="#screens">Ekranlar</a>
-      <a href="#pricing">Fiyat</a>
+<header class="hero">
+  <div class="container">
+    <nav class="nav">
+      <a href="#"><img class="logo" src="assets/penz-logo.svg" alt="Penz"></a>
+      <div class="navlinks">
+        <a href="#ozellikler">Özellikler</a><a href="#kimler">Kimler için?</a><a href="#fiyatlar">Fiyatlar</a><a href="#neden">Neden Penz?</a>
+        <a class="btn btn-orange nav-cta" href="https://app.hellopenz.com">Giriş Yap</a>
+      </div>
     </nav>
-    <a class="header-cta" href="#waitlist">Erken erişim</a>
-  </header>
-
-  <main id="top">
-    <section class="hero section-pad">
-      <div class="hero-copy">
-        <div class="eyebrow">
-          <img src="assets/penz-icon.svg" alt="" aria-hidden="true" />
-          Küçük işletmeler için akıllı takip
-        </div>
-        <h1>Muhasebeciniz için değil.<br>İşletmeniz için tasarlandı.</h1>
-        <p class="lead">PENZ; cari, iş, tahsilat, ödeme ve nakit akışını tek ekranda sadeleştiren pratik işletme takip uygulamasıdır.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#waitlist">Bekleme listesine katıl</a>
-          <a class="button secondary" href="#screens">Ekranları gör</a>
-        </div>
-        <p class="micro">Simply Smart. Karmaşık ERP değil, günlük kararlar için net takip.</p>
-      </div>
-
-      <div class="hero-card" aria-label="PENZ gösterge paneli önizleme">
-        <figure class="product-frame hero-shot">
-          <img src="assets/screens/dashboard.png" alt="PENZ gösterge paneli ekran görüntüsü" />
-        </figure>
-      </div>
-    </section>
-
-    <section id="features" class="section-pad feature-section">
-      <div class="section-head">
-        <span>Özellikler</span>
-        <h2>Günlük işletme takibi için sade yapı.</h2>
-        <p>Dağınık Excel dosyaları, unutulan vadeler ve karışan müşteri işleri yerine tek, anlaşılır bir sistem.</p>
-      </div>
-      <div class="features">
-        <article>
-          <h3>Cari takip</h3>
-          <p>Müşteri ve tedarikçi bakiyelerini, alacak ve borçları hızlıca görün.</p>
-        </article>
-        <article>
-          <h3>İş & proje takibi</h3>
-          <p>Her müşteriye bağlı işleri, maliyetleri ve tahsilat durumunu ayrı ayrı yönetin.</p>
-        </article>
-        <article>
-          <h3>Nakit akışı</h3>
-          <p>Gelen, giden, vadesi yaklaşan ve geciken ödemeleri tek bakışta izleyin.</p>
-        </article>
-        <article>
-          <h3>Basit raporlar</h3>
-          <p>Karışık muhasebe ekranları yerine işletme sahibinin anlayacağı net özetler.</p>
-        </article>
-      </div>
-    </section>
-
-
-    <section id="audience" class="section-pad audience-section">
-      <div class="section-head wide">
-        <span>Kimler için uygun?</span>
-        <h2>Hizmet üreten küçük ekipler ve bağımsız çalışanlar için.</h2>
-        <p>PENZ; stok, üretim ya da ağır muhasebe yerine müşteri, iş, tahsilat, gider ve nakit akışını takip etmek isteyen hizmet odaklı işletmeler için tasarlandı.</p>
-      </div>
-      <div class="audience-grid">
-        <article><strong>Freelance çalışanlar</strong><p>İş, teklif, tahsilat ve giderlerini tek yerde görmek isteyenler.</p></article>
-        <article><strong>Fotoğrafçılar</strong><p>Çekim işleri, müşteri ödemeleri ve proje giderlerini takip edenler.</p></article>
-        <article><strong>İç mimarlar</strong><p>Proje bazlı gelir, satın alma ve tedarikçi ödemelerini yönetenler.</p></article>
-        <article><strong>Avukatlar</strong><p>Müvekkil, dosya, tahsilat ve düzenli giderlerini sade şekilde izlemek isteyenler.</p></article>
-        <article><strong>Ajanslar</strong><p>Müşteri bazlı işler, tedarikçiler ve kârlılık takibini netleştirmek isteyenler.</p></article>
-        <article><strong>Danışmanlar</strong><p>Aylık hizmet, proje bedeli ve ödeme takibini kolaylaştırmak isteyenler.</p></article>
-      </div>
-    </section>
-    <section id="screens" class="section-pad screens-section">
-      <div class="section-head wide">
-        <span>Ekranlar</span>
-        <h2>İşletmenin temel alanları tek sistemde.</h2>
-        <p>Müşteriler, tedarikçiler, işler, satın almalar, kasalar ve raporlar ayrı ayrı görünür. PENZ’in asıl gücü, tüm bu alanları sade bir arayüzde toplamasıdır.</p>
-      </div>
-
-      <div class="screen-gallery">
-        <article class="screen-card">
-          <div class="screen-copy">
-            <span>Gösterge Paneli</span>
-            <h3>İşletmenizin genel durumunu tek bakışta görün.</h3>
-            <p>Toplam satış, tahsilat, alacak, borç, kasa ve aylık performans aynı ekranda toplanır.</p>
-          </div>
-          <figure class="product-frame"><img src="assets/screens/dashboard.png" alt="PENZ gösterge paneli" /></figure>
-        </article>
-
-        <article class="screen-card">
-          <div class="screen-copy">
-            <span>Müşteriler</span>
-            <h3>Tüm müşterilerinizi ve cari bakiyelerini yönetin.</h3>
-            <p>Müşteri bazında toplam satış, tahsil edilen tutar, bekleyen alacak ve iş sayısı net görünür.</p>
-          </div>
-          <figure class="product-frame"><img src="assets/screens/customers.png" alt="PENZ müşteriler ekranı" /></figure>
-        </article>
-
-        <article class="screen-card">
-          <div class="screen-copy">
-            <span>Tedarikçiler</span>
-            <h3>Tedarikçi ve gider kartlarınızı takip edin.</h3>
-            <p>Toplam satın alma, ödenen tutar ve bekleyen borç tedarikçi bazında düzenli kalır.</p>
-          </div>
-          <figure class="product-frame"><img src="assets/screens/suppliers.png" alt="PENZ tedarikçiler ekranı" /></figure>
-        </article>
-
-        <article class="screen-card">
-          <div class="screen-copy">
-            <span>İşler / Satışlar</span>
-            <h3>Her işi müşterisi, bedeli ve tahsilatıyla izleyin.</h3>
-            <p>Aktif işler, tamamlanan işler, kısmi ödemeler ve bekleyen alacaklar tek listede görünür.</p>
-          </div>
-          <figure class="product-frame"><img src="assets/screens/jobs.png" alt="PENZ işler ve satışlar ekranı" /></figure>
-        </article>
-
-        <article class="screen-card">
-          <div class="screen-copy">
-            <span>Satın Almalar</span>
-            <h3>Giderlerin hangi müşteriye ait olduğunu görün.</h3>
-            <p>Tedarikçilerden yapılan satın almaları müşteriye, işe veya genel gidere bağlayabilirsiniz.</p>
-          </div>
-          <figure class="product-frame"><img src="assets/screens/purchases.png" alt="PENZ satın almalar ekranı" /></figure>
-        </article>
-
-        <article class="screen-card">
-          <div class="screen-copy">
-            <span>Kasalar</span>
-            <h3>Şirket ve şahsi kasayı ayrı ayrı takip edin.</h3>
-            <p>Tahsilat, ödeme ve kasa transferlerini net şekilde izleyin.</p>
-          </div>
-          <figure class="product-frame"><img src="assets/screens/cash.png" alt="PENZ kasalar ekranı" /></figure>
-        </article>
-
-        <article class="screen-card">
-          <div class="screen-copy">
-            <span>Raporlar</span>
-            <h3>Kârlılığı ve aylık performansı anında analiz edin.</h3>
-            <p>Müşteri bazlı kârlılık, satış, satın alma ve net kâr bilgisi karar almayı kolaylaştırır.</p>
-          </div>
-          <figure class="product-frame"><img src="assets/screens/reports.png" alt="PENZ raporlar ekranı" /></figure>
-        </article>
-
-        <article class="screen-card">
-          <div class="screen-copy">
-            <span>Ayarlar</span>
-            <h3>Kategorileri ve sistemi ihtiyacınıza göre düzenleyin.</h3>
-            <p>Kategori yönetimiyle gider ve tedarikçi yapınızı kendi işletmenize göre şekillendirin.</p>
-          </div>
-          <figure class="product-frame"><img src="assets/screens/settings.png" alt="PENZ ayarlar ekranı" /></figure>
-        </article>
-      </div>
-    </section>
-
-    <section class="section-pad split-section">
+    <div class="hero-grid">
       <div>
-        <span class="tag">Simply Smart.</span>
-        <h2>Az karmaşa, net takip.</h2>
-        <p>PENZ’in amacı her şeyi karmaşıklaştırmak değil; bugün ne aldınız, ne ödediniz, kimden ne bekliyorsunuz, bunu netleştirmek.</p>
+        <div class="eyebrow">Simply Smart.</div>
+        <h1>Muhasebeciniz için değil,<br><span>işletmeniz için tasarlandı.</span></h1>
+        <p class="lead">Müşterilerinizi, satışlarınızı, satın almalarınızı, kasalarınızı ve raporlarınızı tek panelden yönetin.</p>
+        <div class="actions"><a class="btn btn-orange" href="https://app.hellopenz.com">Giriş Yap</a><a class="btn btn-outline" href="#ekranlar">Ekranları İncele</a></div>
       </div>
-      <div class="check-list">
-        <p>✓ Çoklu firma yapısına uygun</p>
-        <p>✓ Müşteri, tedarikçi ve genel gider takibi</p>
-        <p>✓ Tahsilat ve ödeme geçmişi</p>
-        <p>✓ Küçük işletmeler için hızlı kullanım</p>
+      <div class="visual">
+        <div class="purple-blob"></div><div class="shape"></div>
+        
+        <div class="dashboard-frame"><img src="assets/mockup-01.png" alt="Penz gösterge paneli monitör mockup"></div>
       </div>
-    </section>
-
-    <section id="pricing" class="section-pad pricing-section">
-      <div class="pricing-card">
-        <span>Erken erişim</span>
-        <h2>Yakında kullanıma açılıyor.</h2>
-        <p>İlk kullanıcılar için sade kurulum, hızlı başlangıç ve özel fiyatlandırma planı hazırlanıyor.</p>
-        <a class="button primary" href="#waitlist">Bilgi almak istiyorum</a>
-      </div>
-    </section>
-
-    <section id="waitlist" class="section-pad cta-section">
-      <img src="assets/penz-icon.svg" alt="" aria-hidden="true" />
-      <h2>PENZ’i ilk deneyenlerden olun.</h2>
-      <p>İşletme takibini sadeleştirmek istiyorsanız bize ulaşın.</p>
-      <a class="button primary large" href="mailto:hello@penz.app?subject=PENZ%20Erken%20Eri%C5%9Fim">hello@penz.app</a>
-    </section>
-  </main>
-
-  <footer>
-    <img src="assets/penz-logo.svg" alt="PENZ" />
-    <p>© 2026 PENZ. Simply Smart.</p>
-  </footer>
-</body>
-</html>
+    </div>
+  </div>
+</header>
+<section class="section" id="ozellikler"><div class="container"><div class="section-head"><div class="kicker">Özellikler</div><h2>İşletmenizin ihtiyacı olan her şey tek panelde</h2><p>Dağınık tablolar ve ayrı takip dosyaları yerine sade, anlaşılır ve gerçek iş akışınıza uygun bir yönetim sistemi.</p></div><div class="feature-grid">
+<div class="card"><div class="icon">₺</div><h3>Cari Yönetimi</h3><p>Müşterilerinizin toplam satışlarını, tahsilatlarını ve bekleyen alacaklarını izleyin.</p></div>
+<div class="card"><div class="icon">↗</div><h3>İş / Satış Takibi</h3><p>Her işi, tutarı, ödeme durumunu ve kalan bakiyeyi tek ekrandan yönetin.</p></div>
+<div class="card"><div class="icon">⌁</div><h3>Satın Almalar</h3><p>Tedarikçi giderlerini müşteri veya iş bazında kaydedin ve takip edin.</p></div>
+<div class="card"><div class="icon">▣</div><h3>Tedarikçiler</h3><p>Tedarikçi kartlarını, toplam satın almaları ve bekleyen borçları görüntüleyin.</p></div>
+<div class="card"><div class="icon">▤</div><h3>Kasa Yönetimi</h3><p>Şirket ve şahsi kasanızı ayrı izleyin; transferleri ve hareketleri görün.</p></div>
+<div class="card"><div class="icon">▥</div><h3>Raporlar</h3><p>Satış, satın alma, kârlılık ve kasa analizlerinizi filtreleyerek oluşturun.</p></div>
+</div></div></section>
+<section class="section alt" id="kimler"><div class="container"><div class="section-head"><div class="kicker">Kimler için?</div><h2>Hizmet sektörüne özel geliştirildi</h2><p>İşini proje, müşteri ve tahsilat üzerinden yöneten küçük işletmeler ve bağımsız profesyoneller için.</p><div class="audience"><span class="pill">Ajanslar</span><span class="pill">Freelancerlar</span><span class="pill">İç Mimarlar</span><span class="pill">Avukatlar</span><span class="pill">Danışmanlar</span><span class="pill">Yazılım Firmaları</span></div></div></div></section>
+<section class="section" id="ekranlar"><div class="container"><div class="section-head"><div class="kicker">Gerçek ekranlar</div><h2>Penz’i yakından inceleyin</h2><p>Aşağıdaki ekranlar doğrudan çalışan Penz uygulamasından alınmıştır.</p></div><div class="screens-wrap"><div class="screen-tabs">
+<button class="active" data-img="assets/01-dashboard.png">Gösterge Paneli</button><button data-img="assets/02-musteriler.png">Müşteriler</button><button data-img="assets/03-isler.png">İşler / Satışlar</button><button data-img="assets/04-tedarikciler.png">Tedarikçiler</button><button data-img="assets/05-satin-almalar.png">Satın Almalar</button><button data-img="assets/06-kasalar.png">Kasalar</button><button data-img="assets/08-raporlar.png">Raporlar</button><button data-img="assets/10-musteri-detay.png">Müşteri Detay</button></div><div class="screen-view"><img id="screenImg" src="assets/01-dashboard.png" alt="Penz uygulama ekranı"></div></div></div></section>
+<section class="section alt" id="fiyatlar"><div class="container"><div class="section-head"><div class="kicker">Fiyatlandırma</div><h2>Basit ve şeffaf fiyatlandırma</h2><p>İhtiyacınız olan tüm özellikler tek pakette.</p></div><div class="pricing-grid">
+<div class="price-card"><div class="price-type">Aylık</div><div class="price"><span>₺</span>400<small>/ ay</small></div><ul><li>✓ Sınırsız müşteri</li><li>✓ Sınırsız iş</li><li>✓ Sınırsız tedarikçi</li><li>✓ Tüm raporlar</li><li>✓ Güncellemeler</li></ul><a class="btn btn-outline price-btn" href="https://app.hellopenz.com">Hemen Başla</a></div>
+<div class="price-card featured"><div class="price-badge">En Avantajlı</div><div class="price-type">Yıllık</div><div class="price"><span>₺</span>4.000<small>/ yıl</small></div><div class="saving">2 ay ücretsiz</div><ul><li>✓ Aylık paketteki tüm özellikler</li><li>✓ Öncelikli destek</li><li>✓ Yaklaşık %17 tasarruf</li></ul><a class="btn btn-orange price-btn" href="https://app.hellopenz.com">Yıllık Başla</a></div>
+</div><p class="price-note"><strong>Tanıtım fiyatları yalnızca 31 Aralık 2026 tarihine kadar geçerlidir.</strong></p></div></section>
+<section class="section alt" id="neden"><div class="container"><div class="why-grid"><div><div class="kicker">Neden Penz?</div><h2>Muhasebe programı karmaşası olmadan işletmenizi görün.</h2><p>Penz, muhasebecinizin işini yapan ağır bir muhasebe yazılımı değildir. Günlük işinizi, müşterilerinizi, borç ve alacaklarınızı anlamanızı sağlayan sade bir yönetim panelidir.</p></div><div class="why-list"><div class="why-item">✓ Tek panelde tam görünüm</div><div class="why-item">✓ Borç ve alacak takibi</div><div class="why-item">✓ Şirket ve şahsi kasa</div><div class="why-item">✓ İş bazlı kârlılık</div><div class="why-item">✓ Kolay kategori yönetimi</div><div class="why-item">✓ Sade ve hızlı kullanım</div></div></div></div></section>
+<section class="section" id="giris"><div class="container"><div class="cta"><h2>İşletmenizi Penz ile daha sade yönetin.</h2><p>Müşterileriniz, işleriniz, tahsilatlarınız ve nakit akışınız tek bir yerde.</p><a class="btn btn-orange" href="https://app.hellopenz.com">Giriş Yap</a></div></div></section>
+<footer class="footer"><div class="container"><div class="footer-row"><img class="logo" src="assets/penz-logo.svg" alt="Penz"><small>Simply Smart. — © 2026 Penz</small></div></div></footer>
+<script>document.querySelectorAll('.screen-tabs button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.screen-tabs button').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('screenImg').src=b.dataset.img;}));</script>
+</body></html>
