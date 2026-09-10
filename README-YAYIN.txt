@@ -29,7 +29,7 @@ TEMİZLENDİ / DAHİL EDİLMEDİ:
 - kullanılmayan mockup ve ekran görselleri
 
 NOTLAR:
-- Giriş ve ücretsiz deneme butonları app.penzapp.com'a gider.
+- Giriş butonları https://app.penzapp.com/login adresine; ücretsiz deneme/kayıt butonları https://app.penzapp.com/register adresine gider.
 - İletişim formu mevcut Railway production endpoint'ini kullanmaya devam eder.
 - KVKK, Gizlilik ve Kullanım Koşulları metinleri korunmuştur.
 - Open Graph dosyası şu konumdadır:
