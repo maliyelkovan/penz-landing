@@ -78,7 +78,7 @@ fbq('track', 'PageView');
 </div>
 <div class="product-story">
 <div class="story-frame">
-<img alt="Reklam Ajansı müşteri kartında İşler ve Satışlar görünümü" id="storyImage" src="images/ui/reklam-ajansi-musteri-kartinda-isler-ve-satislar-gorunumu.png"/>
+<img alt="Penz müşteri kartında İşler ve Satışlar görünümü" id="storyImage" src="images/ui/story-musteri-jobs.png"/>
 </div>
 <div aria-label="Müşteri kartı görünümü" class="story-tabs" role="tablist">
 <button class="story-tab active" data-key="jobs">İşler / Satışlar</button>
@@ -87,8 +87,8 @@ fbq('track', 'PageView');
 </div>
 <div class="story-note">
 <span>Bu müşteriden net kâr</span>
-<strong>₺24.000</strong>
-<span>Kâr marjı %67,3</span>
+<strong>₺59.000</strong>
+<span>Kâr marjı %60,2</span>
 </div>
 </div>
 </div>
@@ -96,11 +96,12 @@ fbq('track', 'PageView');
 </section>
 <div class="feature-subnav" id="featureSubnav">
 <div class="container feature-subnav-inner">
-<a href="#musteri">Müşteri</a>
-<a href="#isler">İşler</a>
-<a href="#tedarikci">Tedarikçi</a>
-<a href="#kasa">Kasalar</a>
-<a href="#rapor">Raporlar</a>
+<a class="feature-pill" href="#musteri">Müşteri</a>
+<a class="feature-pill" href="#isler">İşler / Satışlar</a>
+<a class="feature-pill" href="#tedarikci">Tedarikçi</a>
+<a class="feature-pill" href="#kasa">Kasalar</a>
+<a class="feature-pill" href="#fatura-kdv">Fatura &amp; KDV</a>
+<a class="feature-pill" href="#rapor">Raporlar</a>
 </div>
 </div>
 <section class="section" id="musteri">
@@ -134,7 +135,7 @@ fbq('track', 'PageView');
 <div class="metric-strip">
 <div class="metric"><small>Toplam Satış</small><strong>₺92.000</strong></div>
 <div class="metric green"><small>Tahsil Edilen</small><strong>₺68.000</strong></div>
-<div class="metric orange"><small>Bekleyen Alacak</small><strong>₺24.000</strong></div>
+<div class="metric orange"><small>Bekleyen Alacak</small><strong>₺59.000</strong></div>
 <div class="metric"><small>Durum</small><strong>Tek ekranda</strong></div>
 </div>
 </div>
@@ -194,19 +195,58 @@ fbq('track', 'PageView');
 </div>
 </div>
 </section>
+
+<section class="section soft" id="fatura-kdv">
+<div class="container">
+<div class="section-head">
+<div class="kicker">Faturalar &amp; KDV</div>
+<h2>Faturalı işlemleri kaydet. <span class="accent">KDV’ni net gör.</span></h2>
+<p>Satış, satın alma ve gider kayıtlarını aynı sistemde tut; alış KDV, satış KDV ve devreden KDV durumunu tek raporda izle.</p>
+</div>
+<div class="feature-row reverse tight-row">
+<div class="copy">
+<h3>KDV raporu karar vermeyi kolaylaştırır.</h3>
+<p>Hesaplanan KDV, indirilecek KDV, devreden KDV ve tahmini ödenecek KDV tutarını dönem bazında tek bakışta görün.</p>
+<div class="points">
+<div class="point"><b>✓</b><span>Faturalı satışları iş ve müşteriyle ilişkilendirin</span></div>
+<div class="point"><b>✓</b><span>Satın alma ve giderlerde farklı KDV oranlarını kullanın</span></div>
+<div class="point"><b>✓</b><span>Alış KDV, satış KDV ve devreden KDV’yi ayrı izleyin</span></div>
+</div>
+<div class="metric-strip metric-strip-2">
+<div class="metric green"><small>Hesaplanan KDV</small><strong>₺68.800</strong></div>
+<div class="metric orange"><small>İndirilecek KDV</small><strong>₺8.000</strong></div>
+<div class="metric"><small>Devreden KDV</small><strong>₺0</strong></div>
+<div class="metric orange"><small>Tahmini Ödenecek</small><strong>₺60.800</strong></div>
+</div>
+</div>
+<div class="shot"><img alt="Penz KDV raporu ekranı" src="images/ui/penz-kdv-raporu-ekrani.png"/></div>
+</div>
+</div>
+</section>
 <section class="section" id="rapor">
 <div class="container">
 <div class="section-head">
 <div class="kicker">Raporlar</div>
-<h2>Cironu değil, <span class="accent">gerçek kârını</span> gör.</h2>
-<p>Tarih, müşteri, iş, tedarikçi ve kasa filtreleriyle istediğiniz dönemin finansal tablosunu saniyeler içinde çıkarın.</p>
+<h2>Raporları filtrele. <span class="accent">Sonucu anında gör.</span></h2>
+<p>Müşteri kârlılığı, kasa analizi, aylık performans ve gider raporlarını aynı yapı içinde inceleyin.</p>
+</div>
+<div class="feature-row tight-row reports-row">
+<div class="copy">
+<h3>Slogan bir yana, rakamlar artık net.</h3>
+<p>Tarih, müşteri, iş, tedarikçi, fatura ve kasa filtreleriyle istediğiniz dönemin finansal tablosunu saniyeler içinde çıkarın.</p>
+<div class="points">
+<div class="point"><b>✓</b><span>Hızlı tarih filtreleri: Bu ay, Geçen ay, Bu yıl, Özel tarih</span></div>
+<div class="point"><b>✓</b><span>Müşteri, iş, tedarikçi, fatura ve kasa bazlı filtreleme</span></div>
+<div class="point"><b>✓</b><span>Toplam satış, gider, net kâr ve nakit hareketi tek ekranda</span></div>
+</div>
+<div class="metric-strip metric-strip-2 compact-metrics">
+<div class="metric green"><small>Toplam Satış</small><strong>₺374.000</strong></div>
+<div class="metric orange"><small>Toplam Satın Alma</small><strong>₺39.000</strong></div>
+<div class="metric orange"><small>Toplam Gider</small><strong>₺3.500</strong></div>
+<div class="metric green"><small>Net Kâr</small><strong>₺331.500</strong></div>
+</div>
 </div>
 <div class="shot"><img alt="Penz Raporlar ekranı" src="images/ui/penz-raporlar-ekrani.png"/></div>
-<div class="metric-strip">
-<div class="metric green"><small>Toplam Satış</small><strong>₺32.000</strong></div>
-<div class="metric orange"><small>Satın Alma</small><strong>₺8.000</strong></div>
-<div class="metric orange"><small>Gider</small><strong>₺3.000</strong></div>
-<div class="metric green"><small>Net Kâr</small><strong>₺21.000</strong></div>
 </div>
 </div>
 </section>
