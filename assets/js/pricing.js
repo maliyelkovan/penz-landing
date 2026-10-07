@@ -9,7 +9,7 @@ function setPlan(plan) {
   const yearly = plan === "yearly";
   monthlyBtn.classList.toggle("active", !yearly);
   yearlyBtn.classList.toggle("active", yearly);
-  price.textContent = yearly ? "₺4.000" : "₺400";
+  price.textContent = yearly ? "₺5.999" : "₺599";
   period.textContent = yearly ? "/ yıl" : "/ ay";
   saving.style.display = yearly ? "block" : "none";
 }
