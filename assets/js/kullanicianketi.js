@@ -76,34 +76,48 @@
 
   function collectPayload() {
     const data = new FormData(form);
-    const value = name => data.get(name) || '';
-    const values = name => data.getAll(name);
-    return {
+    const value = name => (data.get(name) || '').toString().trim();
+    const values = name => data.getAll(name).map(v => v.toString().trim()).filter(Boolean);
+    const joinWithOther = (name, otherName) => {
+      const selected = values(name);
+      const other = value(otherName);
+      if (other) selected.push('Diğer: ' + other);
+      return selected.join(', ');
+    };
+    const singleWithOther = (name, otherName) => {
+      const selected = value(name);
+      const other = value(otherName);
+      if (selected && other) return selected + ' | Diğer: ' + other;
+      if (other) return 'Diğer: ' + other;
+      return selected;
+    };
+
+    const payload = {
       _subject: 'Penz Kullanıcı Anketi – ' + value('full_name') + ' – ' + value('company_name'),
       _template: 'table',
       _captcha: 'false',
-      ad_soyad: value('full_name'),
-      firma_adi: value('company_name'),
-      e_posta: value('email'),
-      respondent_id: value('respondent_id'),
-      source: value('source'),
-      submitted_at: new Date().toISOString(),
-      q1_reasons: values('q1'),
-      q1_other: value('q1_other'),
-      q2_previous_method: value('q2'),
-      q2_other: value('q2_other'),
-      q3_main_reason_not_continuing: value('q3'),
-      q3_other: value('q3_other'),
-      q4_missing_features: values('q4'),
-      q4_other: value('q4_other'),
-      q5_current_tool: value('q5'),
-      q6_most_important_need: value('q6'),
-      q7_features_to_return: values('q7'),
-      q7_other: value('q7_other'),
-      q8_price_view: value('q8'),
-      q9_use_again: value('q9'),
-      q10_one_thing: value('q10')
+      'Ad Soyad': value('full_name'),
+      'Firma Adı': value('company_name'),
+      'E-posta': value('email'),
+      '1. Penz’e kayıt olmanızın temel nedeni neydi?': joinWithOther('q1', 'q1_other'),
+      '2. Penz’den önce bu işlemleri nasıl takip ediyordunuz?': singleWithOther('q2', 'q2_other'),
+      '3. Penz’i denedikten sonra kullanmaya devam etmemenizin temel nedeni neydi?': singleWithOther('q3', 'q3_other'),
+      '4. Penz’de eksik olduğunu düşündüğünüz özellikler hangileriydi?': joinWithOther('q4', 'q4_other'),
+      '5. Şu anda işletmenizde finans ve iş takibi için ne kullanıyorsunuz?': value('q5'),
+      '6. İşletmenizde aşağıdakilerden hangisi sizin için en önemli ihtiyaç?': value('q6'),
+      '7. Penz hangi özellikleri eklerse tekrar kullanmayı düşünürdünüz?': joinWithOther('q7', 'q7_other'),
+      '8. Penz’in aylık 599 TL + KDV fiyatını nasıl değerlendiriyorsunuz?': value('q8'),
+      '9. Penz’i tekrar kullanmayı düşünür müsünüz?': value('q9'),
+      '10. Penz’i sizin için gerçekten faydalı hale getirecek tek şey ne olurdu?': value('q10'),
+      'Gönderim Zamanı': new Intl.DateTimeFormat('tr-TR', {
+        dateStyle: 'short', timeStyle: 'short', timeZone: 'Europe/Istanbul'
+      }).format(new Date())
     };
+
+    if (value('respondent_id')) payload['Katılımcı Kodu'] = value('respondent_id');
+    if (value('source')) payload['Gönderim Kaynağı'] = value('source');
+
+    return payload;
   }
 
   form.addEventListener('submit', async function (event) {
