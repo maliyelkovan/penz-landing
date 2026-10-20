@@ -1,9 +1,8 @@
 (function () {
   const form = document.getElementById('surveyForm');
   if (!form) return;
-
-  // Yayına alınırken backend tarafında bu endpoint'in oluşturulması gerekir.
-  const endpoint = '/api/kullanicianketi';
+  // Statik siteden anket yanıtlarını e-posta ile iletir. İlk kullanımda FormSubmit, alıcı adrese doğrulama e-postası gönderir.
+  const endpoint = 'https://formsubmit.co/ajax/anket@penzapp.com';
   const submitButton = document.getElementById('surveySubmit');
   const statusEl = document.getElementById('surveyStatus');
   const successEl = document.getElementById('surveySuccess');
@@ -11,6 +10,11 @@
   const progressText = document.getElementById('progressText');
   const respondentId = document.getElementById('respondentId');
   const surveySource = document.getElementById('surveySource');
+  const identityCard = document.getElementById('identityCard');
+  const identityError = document.getElementById('identityError');
+  const fullName = document.getElementById('fullName');
+  const companyName = document.getElementById('companyName');
+  const emailAddress = document.getElementById('emailAddress');
   const params = new URLSearchParams(window.location.search);
 
   respondentId.value = params.get('id') || '';
@@ -57,11 +61,30 @@
     updateProgress();
   });
 
+  function identityValid() {
+    const emailOk = emailAddress.validity.valid && emailAddress.value.trim().length > 3;
+    const ok = fullName.value.trim().length > 1 && companyName.value.trim().length > 1 && emailOk;
+    identityCard.classList.toggle('invalid', !ok);
+    return ok;
+  }
+
+  [fullName, companyName, emailAddress].forEach(function (input) {
+    input.addEventListener('input', function () {
+      identityCard.classList.remove('invalid');
+    });
+  });
+
   function collectPayload() {
     const data = new FormData(form);
     const value = name => data.get(name) || '';
     const values = name => data.getAll(name);
     return {
+      _subject: 'Penz Kullanıcı Anketi – ' + value('full_name') + ' – ' + value('company_name'),
+      _template: 'table',
+      _captcha: 'false',
+      ad_soyad: value('full_name'),
+      firma_adi: value('company_name'),
+      e_posta: value('email'),
       respondent_id: value('respondent_id'),
       source: value('source'),
       submitted_at: new Date().toISOString(),
@@ -88,6 +111,9 @@
     statusEl.textContent = '';
 
     let firstInvalid = null;
+    const identityIsValid = identityValid();
+    if (!identityIsValid) firstInvalid = identityCard;
+
     requiredQuestions.forEach(function (question) {
       const isValid = answered(question);
       question.classList.toggle('invalid', !isValid);
