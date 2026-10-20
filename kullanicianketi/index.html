@@ -69,6 +69,20 @@ gtag('config', 'G-F95LWD4E8N');
       <input type="hidden" id="respondentId" name="respondent_id" value=""/>
       <input type="hidden" id="surveySource" name="source" value=""/>
 
+      <section class="identity-card" id="identityCard" aria-labelledby="identityTitle">
+        <div class="identity-head">
+          <span class="identity-kicker">Önce sizi tanıyalım</span>
+          <h2 id="identityTitle">Anket yanıtınızı eşleştirebilmemiz için</h2>
+          <p>Bu bilgiler yalnızca kimin ankete katıldığını takip etmek ve yanıtları doğru kullanıcı kaydıyla eşleştirmek için kullanılacaktır.</p>
+        </div>
+        <div class="identity-grid">
+          <label class="identity-field"><span>Ad Soyad <b>*</b></span><input type="text" id="fullName" name="full_name" autocomplete="name" required placeholder="Adınız ve soyadınız"/></label>
+          <label class="identity-field"><span>Firma Adı <b>*</b></span><input type="text" id="companyName" name="company_name" autocomplete="organization" required placeholder="Firma adınız"/></label>
+          <label class="identity-field identity-wide"><span>E-posta <b>*</b></span><input type="email" id="emailAddress" name="email" autocomplete="email" required placeholder="ornek@firma.com"/></label>
+        </div>
+        <p class="identity-error" id="identityError">Lütfen ad soyad, firma adı ve geçerli e-posta adresinizi girin.</p>
+      </section>
+
       <fieldset class="question" data-q="1" data-required="true">
         <legend><span class="q-no">01</span><span>Penz’e kayıt olmanızın temel nedeni neydi?<small>Birden fazla seçenek seçebilirsiniz.</small></span></legend>
         <div class="options">
@@ -210,7 +224,7 @@ gtag('config', 'G-F95LWD4E8N');
       </fieldset>
 
       <div class="privacy-note">
-        <span>🔒</span><p>Yanıtlarınız yalnızca Penz ürün geliştirme çalışmaları için değerlendirilecektir.</p>
+        <span>🔒</span><p>Yanıtlarınız yalnızca Penz ürün geliştirme çalışmaları için değerlendirilecek ve anket katılımınızı takip etmek amacıyla iletişim bilgilerinizle eşleştirilecektir.</p>
       </div>
 
       <button class="submit-btn" id="surveySubmit" type="submit">Anketi Gönder <span>→</span></button>
