@@ -160,7 +160,7 @@
       if (!response.ok) throw new Error('Anket gönderilemedi');
 
       if (typeof gtag === 'function') gtag('event', 'penz_user_survey_submit');
-      if (typeof ym === 'function') ym(111467088, 'reachGoal', 'user_survey_submit');
+      if (typeof ym === 'function') ym(114042156, 'reachGoal', 'user_survey_submit');
 
       form.hidden = true;
       document.querySelector('.survey-meta').hidden = true;
