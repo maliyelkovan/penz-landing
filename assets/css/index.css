@@ -79,7 +79,7 @@
       gap: 28px;
     }
     .brand { display: inline-flex; align-items: center; min-width: 130px; }
-    .brand-logo { width: 116px; height: auto; display: block; }
+    .brand-logo { width: 108px; height: auto; display: block; }
     .nav-links { display: flex; align-items: center; gap: 28px; font-size: 14px; font-weight: 650; }
     .nav-links a { color: var(--ink-2); transition: color .2s ease; }
     .nav-links a:hover { color: #000; }
@@ -478,7 +478,7 @@
       .container { width: min(calc(100% - 28px), var(--container)); }
       .section { padding: 68px 0; }
       .nav { min-height: 68px; }
-      .brand-logo { width: 102px; }
+      .brand-logo { width: 96px; }
       .nav-actions .btn-dark { min-height: 40px; padding: 0 13px; font-size: 12px; }
       .nav.open .nav-links { top: 68px; left: 14px; right: 14px; }
       .hero { padding-top: 38px; }
@@ -547,3 +547,12 @@ body{background:#fff;}
 .section-soft{background:#F3F2F3;}
 .hero{background:radial-gradient(circle at 79% 24%,rgba(151,194,22,.10),transparent 30%),radial-gradient(circle at 93% 55%,rgba(5,84,115,.05),transparent 24%),linear-gradient(#fff,#fff);}
 .trust-icon,.why-no,.step-no{color:#055473;background:#EEF5D8;}
+
+/* Mobil header: kayıt çağrısı hero alanında kalır, header mevcut kullanıcı girişine ayrılır. */
+@media (max-width: 860px) {
+  .nav-actions .btn-outline { display: inline-flex; background: var(--ink); color: #fff; border-color: var(--ink); }
+  .nav-actions .btn-dark { display: none; }
+}
+@media (max-width: 620px) {
+  .nav-actions .btn-outline { min-height: 40px; padding: 0 16px; font-size: 13px; white-space: nowrap; }
+}

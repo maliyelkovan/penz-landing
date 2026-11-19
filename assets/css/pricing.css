@@ -22,7 +22,7 @@ img{display:block;max-width:100%}
 
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(16px);border-bottom:1px solid rgba(229,234,241,.88)}
 .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand img{width:140px;height:auto}
+.brand img{width:112px;height:auto}
 .menu{display:flex;align-items:center;gap:30px;font-size:14px;font-weight:700}
 .menu a.active{color:var(--ink)}
 .actions{display:flex;gap:10px}
@@ -125,7 +125,7 @@ h2{font-size:clamp(36px,4.7vw,54px);line-height:1.07;letter-spacing:-.04em;margi
 
 footer{border-top:1px solid var(--line);padding:46px 0 28px}
 .footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,.8fr);gap:44px}
-.footer-logo img{width:120px}
+.footer-logo img{width:128px;height:auto}
 .footer-logo p{color:var(--muted);font-size:14px;max-width:300px}
 .footer-col h5{font-size:12px;text-transform:uppercase;letter-spacing:.12em;color:#939AA6;margin:0 0 14px}
 .footer-col a{display:block;font-size:14px;margin:9px 0;color:#355466}
@@ -137,7 +137,7 @@ footer{border-top:1px solid var(--line);padding:46px 0 28px}
   .mobile-menu{display:block}
   .actions .btn:not(.dark){display:none}
   .nav{height:68px}
-  .brand img{width:120px}
+  .brand img{width:102px;height:auto}
   .hero{padding:62px 0 54px}
   .price-layout{grid-template-columns:1fr}
   .value-panel{order:2}
@@ -175,4 +175,11 @@ footer{border-top:1px solid var(--line);padding:46px 0 28px}
   .cta-box{padding:28px 22px}
   .cta-box h2{font-size:32px}
   .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+}
+
+/* Mobil header: giriş bağlantısını göster, deneme CTA'sını içerikte koru. */
+@media (max-width: 900px) {
+  .actions .btn:not(.dark) { display: inline-flex; background: var(--ink); color: #fff; border-color: var(--ink); }
+  .actions .btn.dark { display: none; }
+  .actions .btn { min-height: 42px; padding: 0 14px; font-size: 13px; white-space: nowrap; }
 }

@@ -18,7 +18,7 @@ img{display:block;max-width:100%}
 .container{width:min(1180px,calc(100% - 40px));margin:auto}
 header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(230,235,242,.9)}
 .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand img{width:140px;height:auto}
+.brand img{width:112px;height:auto}
 .menu{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:650}
 .actions{display:flex;gap:10px}
 .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 20px;border-radius:12px;border:1px solid var(--line);font-weight:750;font-size:14px}
@@ -88,7 +88,7 @@ h2{font-size:clamp(34px,4vw,52px);line-height:1.08;letter-spacing:-.035em;margin
 
 footer{border-top:1px solid var(--line);padding:46px 0 28px}
 .footer-grid{display:grid;grid-template-columns:1.4fr repeat(3,.8fr);gap:44px}
-.footer-logo img{width:120px}
+.footer-logo img{width:128px;height:auto}
 .footer-logo p{color:var(--muted);font-size:14px;max-width:280px}
 .footer-col h5{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#939AA6;margin:0 0 14px}
 .footer-col a{display:block;font-size:14px;margin:9px 0;color:#355466}
@@ -109,7 +109,7 @@ footer{border-top:1px solid var(--line);padding:46px 0 28px}
   .menu{display:none}
   .mobile-menu{display:block;font-size:24px}
   .actions .btn:not(.primary){display:none}
-  .brand img{width:120px}
+  .brand img{width:102px;height:auto}
   .nav{height:68px}
   .hero{padding:62px 0 44px}
   .hero-grid{grid-template-columns:1fr;gap:34px}
@@ -165,4 +165,11 @@ footer{border-top:1px solid var(--line);padding:46px 0 28px}
 @media(max-width:560px){
   .metric-strip-2{grid-template-columns:1fr}
   .feature-pill{min-height:36px;padding:0 14px;font-size:13px}
+}
+
+/* Mobil header: giriş bağlantısını göster, deneme CTA'sını içerikte koru. */
+@media (max-width: 900px) {
+  .actions .btn:not(.primary) { display: inline-flex; background: var(--ink); color: #fff; border-color: var(--ink); }
+  .actions .btn.primary { display: none; }
+  .actions .btn { min-height: 42px; padding: 0 14px; font-size: 13px; white-space: nowrap; }
 }
